@@ -2,6 +2,12 @@
 #include <glad/glad.h>
 #include "glfw3.h"
 
+void processInput(GLFWwindow* window) {
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+    }
+}
+
 int main() {
     std::cout << "main start" << std::endl;
 
@@ -31,6 +37,8 @@ int main() {
     });
 
     while (!glfwWindowShouldClose(window)) {
+        processInput(window);
+
         glfwPollEvents();
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
