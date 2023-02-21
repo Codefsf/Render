@@ -40,8 +40,8 @@ include_directories(
 
 #添加文件
 FILE(GLOB global
-    *.h
-    *.cpp
+    main.cpp
+    ${PROJECT_SOURCE_DIR}/libs/glad/src/glad.c
 )
 source_group("" FILES ${global})
 
