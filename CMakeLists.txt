@@ -35,6 +35,7 @@ endif()
 #依赖包含目录
 include_directories(
     ${PROJECT_SOURCE_DIR}/libs/glfw/include
+    ${PROJECT_SOURCE_DIR}/libs/glad/include
 )
 
 #添加文件
@@ -53,10 +54,11 @@ add_executable(${PROJECT_NAME} ${ALL_SOURCE_FILES})
 
 #外部依赖库目录
 target_link_directories(${PROJECT_NAME} PRIVATE
-    "${PROJECT_SOURCE_DIR}/libs/glfw/lib/"
+    "${PROJECT_SOURCE_DIR}/libs/glfw/libs/"
 )
 
 #外部依赖库
 target_link_libraries(${PROJECT_NAME} PRIVATE
     glfw3
+    opengl32
 )
