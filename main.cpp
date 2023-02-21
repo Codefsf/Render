@@ -8,6 +8,8 @@ void processInput(GLFWwindow* window) {
     }
 }
 
+
+
 int main() {
     std::cout << "main start" << std::endl;
 
@@ -34,6 +36,9 @@ int main() {
 
     glfwSetFramebufferSizeCallback(window, [](GLFWwindow* window, int width, int height) {
         glViewport(0, 0, width, height);
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glfwSwapBuffers(window);
     });
 
     while (!glfwWindowShouldClose(window)) {
